@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ETH Industry Programs</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header>
+        <div class="header-content">
+          <h1>ETH Industry Programs</h1>
+          <p class="subtitle">Discover the perfect program for you</p>
+        </div>
+      </header>
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <button class="filter-button" id="filterBtn">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 20 20"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M2.5 5.83333H17.5"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M5 10H15"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+            <path
+              d="M8.33333 14.1667H11.6667"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+            />
+          </svg>
+          <span>Filters</span>
+          <span class="filter-count" id="filterCount">0</span>
+        </button>
+
+        <!-- Active Filters Display -->
+        <div class="active-filters" id="activeFilters"></div>
+      </div>
+
+      <!-- Results Info -->
+      <div class="results-info">
+        <span id="resultsCount">0</span> programs found
+      </div>
+
+      <!-- Programs List -->
+      <div class="programs-list" id="programsList">
+        <!-- Programs will be inserted here by JavaScript -->
+      </div>
+    </div>
+
+    <!-- Filter Modal -->
+    <div class="modal" id="filterModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Filter Programs</h2>
+          <button class="close-btn" id="closeModal">&times;</button>
+        </div>
+
+        <div class="modal-body">
+          <!-- Student Level Filter -->
+          <div class="filter-section">
+            <h3>Student Level</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" name="level" value="Bachelor" />
+                <span>Bachelor</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="level" value="Master" />
+                <span>Master</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="level" value="Extra-curricular" />
+                <span>Extra-curricular</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Duration Filter -->
+          <div class="filter-section">
+            <h3>Duration</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="duration"
+                  value="Short (up to 1 month)"
+                />
+                <span>Short (up to 1 month)</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="duration"
+                  value="Medium (1-6 months)"
+                />
+                <span>Medium (1-6 months)</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="duration"
+                  value="Long (6+ months)"
+                />
+                <span>Long (6+ months)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Investment Filter -->
+          <div class="filter-section">
+            <h3>Investment Size</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="investment"
+                  value="No financial contribution"
+                />
+                <span>No financial contribution</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="investment"
+                  value="Low (CHF 0-5k)"
+                />
+                <span>Low (CHF 0-5k)</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="investment"
+                  value="Medium (CHF 5k+)"
+                />
+                <span>Medium (CHF 5k+)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Category Filter -->
+          <div class="filter-section">
+            <h3>Category</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Energy & Sustainability"
+                />
+                <span>Energy & Sustainability</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Data Science & AI"
+                />
+                <span>Data Science & AI</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Management & Innovation"
+                />
+                <span>Management & Innovation</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Engineering & Technology"
+                />
+                <span>Engineering & Technology</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="category" value="Food Systems" />
+                <span>Food Systems</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Pharma & Health"
+                />
+                <span>Pharma & Health</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Global Challenges"
+                />
+                <span>Global Challenges</span>
+              </label>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button class="btn-secondary" id="clearFilters">Clear All</button>
+          <button class="btn-primary" id="applyFilters">Apply Filters</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
