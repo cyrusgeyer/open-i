@@ -84,9 +84,13 @@ header {
   top: 0;
   z-index: 100;
   border-bottom: 1px solid var(--border-color);
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.filter-button {
+.filter-button,
+.contact-button {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -99,21 +103,25 @@ header {
   color: var(--eth-blue);
   cursor: pointer;
   transition: all 0.2s ease;
-  width: 100%;
+  flex: 1;
   justify-content: center;
   position: relative;
+  text-decoration: none;
 }
 
-.filter-button:hover {
+.filter-button:hover,
+.contact-button:hover {
   background: var(--eth-blue);
   color: var(--white);
 }
 
-.filter-button:active {
+.filter-button:active,
+.contact-button:active {
   transform: scale(0.98);
 }
 
-.filter-button svg {
+.filter-button svg,
+.contact-button svg {
   flex-shrink: 0;
 }
 
@@ -138,6 +146,7 @@ header {
 /* Active Filters */
 .active-filters {
   display: flex;
+  width: 100%;
   flex-wrap: wrap;
   gap: 8px;
   margin-top: 16px;
@@ -368,6 +377,17 @@ header {
   font-size: 14px;
   line-height: 1.6;
   color: var(--text-secondary);
+}
+
+.contact-link {
+  color: var(--eth-blue);
+  font-weight: 600;
+  text-decoration: underline;
+  transition: color 0.2s;
+}
+
+.contact-link:hover {
+  color: var(--eth-petrol);
 }
 
 /* Modal */
