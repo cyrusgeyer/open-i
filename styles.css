@@ -328,6 +328,39 @@ header {
     transform: scale(0.98);
 }
 
+/* Expandable Card Section */
+.program-expanded {
+    border-top: 1px solid var(--border-color);
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+}
+
+.expanded-content {
+    padding: 24px;
+    background: var(--bg-white);
+}
+
+.details-section {
+    margin-bottom: 20px;
+}
+
+.details-section:last-child {
+    margin-bottom: 0;
+}
+
+.details-section h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--eth-blue);
+    margin-bottom: 8px;
+}
+
+.details-section p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+}
+
 /* Modal */
 .modal {
     display: none;

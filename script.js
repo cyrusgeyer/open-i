@@ -417,7 +417,7 @@ function renderPrograms(programsToRender) {
   programsList.innerHTML = programsToRender
     .map(
       (program) => `
-        <div class="program-card">
+        <div class="program-card" id="card-${program.title.replace(/[^a-zA-Z0-9]/g, '-')}">
             <div class="program-header">
                 <h2 class="program-title">${program.title}</h2>
                 <p class="program-department">${program.department}</p>
@@ -456,7 +456,7 @@ function renderPrograms(programsToRender) {
                     <button class="btn btn-secondary" onclick="showContact('${
                       program.contact
                     }')">Contact</button>
-                    <button class="btn btn-primary" onclick="showDetails('${program.title.replace(
+                    <button class="btn btn-primary" onclick="toggleDetails('${program.title.replace(
                       /'/g,
                       "\\'"
                     )}')">View Details</button>
@@ -464,13 +464,34 @@ function renderPrograms(programsToRender) {
                 `
                     : `
                 <div class="program-footer">
-                    <button class="btn btn-primary" onclick="showDetails('${program.title.replace(
+                    <button class="btn btn-primary" onclick="toggleDetails('${program.title.replace(
                       /'/g,
                       "\\'"
                     )}')">View Details</button>
                 </div>
                 `
                 }
+            </div>
+            
+            <div class="program-expanded" id="details-${program.title.replace(/[^a-zA-Z0-9]/g, '-')}" style="display: none;">
+                <div class="expanded-content">
+                    <div class="details-section">
+                        <h3>Industry Involvement</h3>
+                        <p>${program.involvement}</p>
+                    </div>
+                    
+                    <div class="details-section">
+                        <h3>Previous Partners</h3>
+                        <p>${program.partners}</p>
+                    </div>
+                    
+                    ${program.contact ? `
+                    <div class="details-section">
+                        <h3>Contact</h3>
+                        <p>${program.contact}</p>
+                    </div>
+                    ` : ''}
+                </div>
             </div>
         </div>
     `
@@ -535,10 +556,20 @@ function removeFilter(type, value) {
 }
 
 // Placeholder functions for interactions
-function showDetails(programTitle) {
-  const program = programs.find((p) => p.title === programTitle);
-  if (program) {
-    openDetailsModal(program);
+function toggleDetails(programTitle) {
+  const cardId = 'details-' + programTitle.replace(/[^a-zA-Z0-9]/g, '-');
+  const detailsElement = document.getElementById(cardId);
+  
+  if (detailsElement) {
+    if (detailsElement.style.display === 'none') {
+      detailsElement.style.display = 'block';
+      // Smooth scroll to the expanded content
+      setTimeout(() => {
+        detailsElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }, 100);
+    } else {
+      detailsElement.style.display = 'none';
+    }
   }
 }
 
