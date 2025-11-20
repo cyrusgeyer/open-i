@@ -303,6 +303,42 @@ header {
   font-weight: 600;
 }
 
+/* Category-specific colors */
+.tag.healthcare {
+  background: #dc3545;
+  color: var(--white);
+  border-color: #dc3545;
+  font-weight: 600;
+}
+
+.tag.ai {
+  background: #007bff;
+  color: var(--white);
+  border-color: #007bff;
+  font-weight: 600;
+}
+
+.tag.innovation {
+  background: #ffc107;
+  color: #333;
+  border-color: #ffc107;
+  font-weight: 600;
+}
+
+.tag.management {
+  background: #6f42c1;
+  color: var(--white);
+  border-color: #6f42c1;
+  font-weight: 600;
+}
+
+.tag.sustainability {
+  background: #28a745;
+  color: var(--white);
+  border-color: #28a745;
+  font-weight: 600;
+}
+
 .program-footer {
   display: flex;
   gap: 12px;

@@ -49,7 +49,12 @@
           <span class="filter-count" id="filterCount">0</span>
         </button>
 
-        <a href="https://forms.gle/yuZ5gAva4PSL7ciG7" target="_blank" rel="noopener noreferrer" class="contact-button">
+        <a
+          href="https://forms.gle/yuZ5gAva4PSL7ciG7"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-button"
+        >
           <svg
             width="20"
             height="20"
@@ -93,28 +98,87 @@
           </div>
           <div class="modal-header-actions">
             <button class="btn-text" id="clearFilters">Clear All</button>
-            <button class="btn-primary-small" id="applyFilters">Apply Filters</button>
+            <button class="btn-primary-small" id="applyFilters">
+              Apply Filters
+            </button>
           </div>
         </div>
 
         <div class="modal-body">
-
-        <div class="modal-body">
-          <!-- Student Level Filter -->
+          <!-- Category Filter -->
           <div class="filter-section">
-            <h3>Student Level</h3>
+            <h3>Category</h3>
             <div class="filter-options">
               <label class="filter-option">
-                <input type="checkbox" name="level" value="Bachelor" />
-                <span>Bachelor</span>
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Innovation and Engineering"
+                />
+                <span>Innovation and Engineering</span>
               </label>
               <label class="filter-option">
-                <input type="checkbox" name="level" value="Master" />
-                <span>Master</span>
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Energy and Sustainability"
+                />
+                <span>Energy and Sustainability</span>
               </label>
               <label class="filter-option">
-                <input type="checkbox" name="level" value="Extra-curricular" />
-                <span>Extra-curricular</span>
+                <input type="checkbox" name="category" value="Healthcare" />
+                <span>Healthcare</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Data Science and AI"
+                />
+                <span>Data Science and AI</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="category"
+                  value="Business & Management"
+                />
+                <span>Business & Management</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Eligible Partners Filter -->
+          <div class="filter-section">
+            <h3>Eligible Partners</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="eligiblePartners"
+                  value="Companies"
+                />
+                <span>Companies</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="eligiblePartners"
+                  value="Start Ups"
+                />
+                <span>Start Ups</span>
+              </label>
+              <label class="filter-option">
+                <input type="checkbox" name="eligiblePartners" value="NGO" />
+                <span>NGO</span>
+              </label>
+              <label class="filter-option">
+                <input
+                  type="checkbox"
+                  name="eligiblePartners"
+                  value="Governmental Organizations"
+                />
+                <span>Governmental Organizations</span>
               </label>
             </div>
           </div>
@@ -150,92 +214,63 @@
             </div>
           </div>
 
-          <!-- Investment Filter -->
+          <!-- Talent Access Filter -->
           <div class="filter-section">
-            <h3>Investment Size</h3>
+            <h3>Talent Access</h3>
             <div class="filter-options">
               <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="investment"
-                  value="No financial contribution"
-                />
-                <span>No financial contribution</span>
+                <input type="checkbox" name="classSize" value="Small (1-25)" />
+                <span>Small (1-25 students)</span>
               </label>
               <label class="filter-option">
                 <input
                   type="checkbox"
-                  name="investment"
-                  value="Low (CHF 0-5k)"
+                  name="classSize"
+                  value="Medium (26-50)"
                 />
-                <span>Low (CHF 0-5k)</span>
+                <span>Medium (26-50 students)</span>
               </label>
               <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="investment"
-                  value="Medium (CHF 5k+)"
-                />
-                <span>Medium (CHF 5k+)</span>
+                <input type="checkbox" name="classSize" value="Large (51+)" />
+                <span>Large (51+ students)</span>
               </label>
             </div>
           </div>
 
-          <!-- Category Filter -->
+          <!-- Financial Contribution Filter -->
           <div class="filter-section">
-            <h3>Category</h3>
+            <h3>Financial Contribution</h3>
             <div class="filter-options">
               <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="category"
-                  value="Energy & Sustainability"
-                />
-                <span>Energy & Sustainability</span>
+                <input type="checkbox" name="investment" value="None" />
+                <span>None</span>
               </label>
               <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="category"
-                  value="Data Science & AI"
-                />
-                <span>Data Science & AI</span>
+                <input type="checkbox" name="investment" value="Below CHF 5k" />
+                <span>Below CHF 5k (includes none)</span>
               </label>
               <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="category"
-                  value="Management & Innovation"
-                />
-                <span>Management & Innovation</span>
+                <input type="checkbox" name="investment" value="Over CHF 5k" />
+                <span>Over CHF 5k (includes below 5k)</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Student Level Filter -->
+          <div class="filter-section">
+            <h3>Student Level</h3>
+            <div class="filter-options">
+              <label class="filter-option">
+                <input type="checkbox" name="level" value="Bachelor" />
+                <span>Bachelor</span>
               </label>
               <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="category"
-                  value="Engineering & Technology"
-                />
-                <span>Engineering & Technology</span>
+                <input type="checkbox" name="level" value="Master" />
+                <span>Master</span>
               </label>
               <label class="filter-option">
-                <input type="checkbox" name="category" value="Food Systems" />
-                <span>Food Systems</span>
-              </label>
-              <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="category"
-                  value="Pharma & Health"
-                />
-                <span>Pharma & Health</span>
-              </label>
-              <label class="filter-option">
-                <input
-                  type="checkbox"
-                  name="category"
-                  value="Global Challenges"
-                />
-                <span>Global Challenges</span>
+                <input type="checkbox" name="level" value="Extra-curricular" />
+                <span>Extra-curricular</span>
               </label>
             </div>
           </div>
@@ -250,11 +285,11 @@
           <h2 id="detailsTitle">Program Details</h2>
           <button class="close-btn" id="closeDetails">&times;</button>
         </div>
-        
+
         <div class="modal-body" id="detailsBody">
           <!-- Details will be inserted here -->
         </div>
-        
+
         <div class="modal-footer">
           <button class="btn-primary" id="closeDetailsBtn">Close</button>
         </div>
