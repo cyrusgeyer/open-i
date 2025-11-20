@@ -68,8 +68,14 @@
     <div class="modal" id="filterModal">
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Filter Programs</h2>
-          <button class="close-btn" id="closeModal">&times;</button>
+          <div class="modal-header-top">
+            <h2>Filter Programs</h2>
+            <button class="close-btn" id="closeModal">&times;</button>
+          </div>
+          <div class="modal-header-actions">
+            <button class="btn-text" id="clearFilters">Clear All</button>
+            <button class="btn-primary-small" id="applyFilters">Apply Filters</button>
+          </div>
         </div>
 
         <div class="modal-body">
@@ -214,11 +220,6 @@
               </label>
             </div>
           </div>
-        </div>
-
-        <div class="modal-footer">
-          <button class="btn-secondary" id="clearFilters">Clear All</button>
-          <button class="btn-primary" id="applyFilters">Apply Filters</button>
         </div>
       </div>
     </div>

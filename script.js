@@ -29,8 +29,11 @@ const programs = [
     classSize: "max. 20 students",
     partners: "Coop, Swiss Federal Office of Energy, AMAG, Siemens",
     overview:
-      "This lecture introduces students to systematic foresight methods for exploring and shaping long-term developments under uncertainty. The course links foresight theory with applied cases in sustainability and innovation.",
-    involvement: "Contextual Collaboration (no financial investment)",
+      "This lecture introduces students to systematic foresight methods for exploring and shaping long-term developments under uncertainty. Participants learn to identify key drivers of change, build plausible scenarios, and derive strategic implications for organizations and policy. The course links foresight theory with applied cases in sustainability and innovation across Switzerland.",
+    structure: "Combines lectures, group work, and applied foresight case studies. Tools include trend analysis, horizon scanning, and scenario building. External partners provide real-world context rather than fixed project briefs. Culminates in a presentation and discussion of scenario-based insights.",
+    involvement: "The course enables organisations to strengthen their foresight capabilities and long-term innovation strategies. By engaging as contextual partners, companies and public institutions gain early insight into sustainability trends, system interdependencies, and emerging opportunities. They also receive student-led analyses on sector-relevant challenges, strategic impulses for innovation and risk management, and exposure to advanced methods for trend monitoring and scenario planning.",
+    whoShouldJoin: "Companies and public institutions facing long-term sustainability and innovation questions (energy, mobility, food, building, finance). Strategy, innovation, or sustainability units that want to strengthen internal foresight capabilities.",
+    suitableChallenges: "Open, strategic 'how might the future look?' questions (e.g. 'Future of mobility in Switzerland 2040', 'Retail energy in a decentralised grid'). Topics where multiple plausible future scenarios and systemic interdependencies are relevant. Challenges where qualitative foresight insights and strategic narratives are more valuable than short-term operational solutions.",
     contact: "Dr. Johannes Heck",
   },
   {
@@ -255,22 +258,22 @@ let activeFilters = {
 };
 
 // DOM Elements
-const filterBtn = document.getElementById('filterBtn');
-const filterModal = document.getElementById('filterModal');
-const closeModal = document.getElementById('closeModal');
-const applyFilters = document.getElementById('applyFilters');
-const clearFilters = document.getElementById('clearFilters');
-const programsList = document.getElementById('programsList');
-const resultsCount = document.getElementById('resultsCount');
-const filterCount = document.getElementById('filterCount');
-const activeFiltersContainer = document.getElementById('activeFilters');
+const filterBtn = document.getElementById("filterBtn");
+const filterModal = document.getElementById("filterModal");
+const closeModal = document.getElementById("closeModal");
+const applyFilters = document.getElementById("applyFilters");
+const clearFilters = document.getElementById("clearFilters");
+const programsList = document.getElementById("programsList");
+const resultsCount = document.getElementById("resultsCount");
+const filterCount = document.getElementById("filterCount");
+const activeFiltersContainer = document.getElementById("activeFilters");
 
 // Details Modal Elements
-const detailsModal = document.getElementById('detailsModal');
-const closeDetails = document.getElementById('closeDetails');
-const closeDetailsBtn = document.getElementById('closeDetailsBtn');
-const detailsTitle = document.getElementById('detailsTitle');
-const detailsBody = document.getElementById('detailsBody');
+const detailsModal = document.getElementById("detailsModal");
+const closeDetails = document.getElementById("closeDetails");
+const closeDetailsBtn = document.getElementById("closeDetailsBtn");
+const detailsTitle = document.getElementById("detailsTitle");
+const detailsBody = document.getElementById("detailsBody");
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
@@ -296,7 +299,7 @@ function setupEventListeners() {
       closeModalHandler();
     }
   });
-  
+
   detailsModal.addEventListener("click", (e) => {
     if (e.target === detailsModal) {
       closeDetailsModal();
@@ -417,7 +420,10 @@ function renderPrograms(programsToRender) {
   programsList.innerHTML = programsToRender
     .map(
       (program) => `
-        <div class="program-card" id="card-${program.title.replace(/[^a-zA-Z0-9]/g, '-')}">
+        <div class="program-card" id="card-${program.title.replace(
+          /[^a-zA-Z0-9]/g,
+          "-"
+        )}">
             <div class="program-header">
                 <h2 class="program-title">${program.title}</h2>
                 <p class="program-department">${program.department}</p>
@@ -473,24 +479,64 @@ function renderPrograms(programsToRender) {
                 }
             </div>
             
-            <div class="program-expanded" id="details-${program.title.replace(/[^a-zA-Z0-9]/g, '-')}" style="display: none;">
+            <div class="program-expanded" id="details-${program.title.replace(
+              /[^a-zA-Z0-9]/g,
+              "-"
+            )}" style="display: none;">
                 <div class="expanded-content">
+                    ${
+                      program.structure
+                        ? `
                     <div class="details-section">
-                        <h3>Industry Involvement</h3>
+                        <h3>Structure & Learning Approach</h3>
+                        <p>${program.structure}</p>
+                    </div>
+                    `
+                        : ""
+                    }
+                    
+                    <div class="details-section">
+                        <h3>Collaboration & Impact</h3>
                         <p>${program.involvement}</p>
                     </div>
+                    
+                    ${
+                      program.whoShouldJoin
+                        ? `
+                    <div class="details-section">
+                        <h3>Who Should Get Involved?</h3>
+                        <p>${program.whoShouldJoin}</p>
+                    </div>
+                    `
+                        : ""
+                    }
+                    
+                    ${
+                      program.suitableChallenges
+                        ? `
+                    <div class="details-section">
+                        <h3>What Types of Challenges Are Suitable?</h3>
+                        <p>${program.suitableChallenges}</p>
+                    </div>
+                    `
+                        : ""
+                    }
                     
                     <div class="details-section">
                         <h3>Previous Partners</h3>
                         <p>${program.partners}</p>
                     </div>
                     
-                    ${program.contact ? `
+                    ${
+                      program.contact
+                        ? `
                     <div class="details-section">
                         <h3>Contact</h3>
                         <p>${program.contact}</p>
                     </div>
-                    ` : ''}
+                    `
+                        : ""
+                    }
                 </div>
             </div>
         </div>
@@ -557,18 +603,31 @@ function removeFilter(type, value) {
 
 // Placeholder functions for interactions
 function toggleDetails(programTitle) {
-  const cardId = 'details-' + programTitle.replace(/[^a-zA-Z0-9]/g, '-');
+  const cardId = "details-" + programTitle.replace(/[^a-zA-Z0-9]/g, "-");
   const detailsElement = document.getElementById(cardId);
-  
-  if (detailsElement) {
-    if (detailsElement.style.display === 'none') {
-      detailsElement.style.display = 'block';
+  const cardElement = document.getElementById("card-" + programTitle.replace(/[^a-zA-Z0-9]/g, "-"));
+
+  if (detailsElement && cardElement) {
+    // Find the View Details button within this specific card
+    const buttons = cardElement.querySelectorAll('.btn-primary');
+    const detailsButton = Array.from(buttons).find(btn => 
+      btn.textContent === 'View Details' || btn.textContent === 'Close Details'
+    );
+    
+    if (detailsElement.style.display === "none") {
+      detailsElement.style.display = "block";
+      if (detailsButton) {
+        detailsButton.textContent = "Close Details";
+      }
       // Smooth scroll to the expanded content
       setTimeout(() => {
-        detailsElement.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        detailsElement.scrollIntoView({ behavior: "smooth", block: "nearest" });
       }, 100);
     } else {
-      detailsElement.style.display = 'none';
+      detailsElement.style.display = "none";
+      if (detailsButton) {
+        detailsButton.textContent = "View Details";
+      }
     }
   }
 }
@@ -580,7 +639,7 @@ function showContact(contact) {
 // Details Modal Functions
 function openDetailsModal(program) {
   detailsTitle.textContent = program.title;
-  
+
   detailsBody.innerHTML = `
     <div class="details-section">
       <h3>Overview</h3>
@@ -635,20 +694,23 @@ function openDetailsModal(program) {
       <p>${program.partners}</p>
     </div>
     
-    ${program.contact ? `
+    ${
+      program.contact
+        ? `
     <div class="details-section">
       <h3>Contact</h3>
       <p>${program.contact}</p>
     </div>
-    ` : ''}
+    `
+        : ""
+    }
   `;
-  
-  detailsModal.classList.add('active');
-  document.body.style.overflow = 'hidden';
+
+  detailsModal.classList.add("active");
+  document.body.style.overflow = "hidden";
 }
 
 function closeDetailsModal() {
-  detailsModal.classList.remove('active');
-  document.body.style.overflow = '';
+  detailsModal.classList.remove("active");
+  document.body.style.overflow = "";
 }
-
