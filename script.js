@@ -255,15 +255,22 @@ let activeFilters = {
 };
 
 // DOM Elements
-const filterBtn = document.getElementById("filterBtn");
-const filterModal = document.getElementById("filterModal");
-const closeModal = document.getElementById("closeModal");
-const applyFilters = document.getElementById("applyFilters");
-const clearFilters = document.getElementById("clearFilters");
-const programsList = document.getElementById("programsList");
-const resultsCount = document.getElementById("resultsCount");
-const filterCount = document.getElementById("filterCount");
-const activeFiltersContainer = document.getElementById("activeFilters");
+const filterBtn = document.getElementById('filterBtn');
+const filterModal = document.getElementById('filterModal');
+const closeModal = document.getElementById('closeModal');
+const applyFilters = document.getElementById('applyFilters');
+const clearFilters = document.getElementById('clearFilters');
+const programsList = document.getElementById('programsList');
+const resultsCount = document.getElementById('resultsCount');
+const filterCount = document.getElementById('filterCount');
+const activeFiltersContainer = document.getElementById('activeFilters');
+
+// Details Modal Elements
+const detailsModal = document.getElementById('detailsModal');
+const closeDetails = document.getElementById('closeDetails');
+const closeDetailsBtn = document.getElementById('closeDetailsBtn');
+const detailsTitle = document.getElementById('detailsTitle');
+const detailsBody = document.getElementById('detailsBody');
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
@@ -279,10 +286,20 @@ function setupEventListeners() {
   applyFilters.addEventListener("click", applyFiltersHandler);
   clearFilters.addEventListener("click", clearFiltersHandler);
 
+  // Details modal listeners
+  closeDetails.addEventListener("click", closeDetailsModal);
+  closeDetailsBtn.addEventListener("click", closeDetailsModal);
+
   // Close modal on outside click
   filterModal.addEventListener("click", (e) => {
     if (e.target === filterModal) {
       closeModalHandler();
+    }
+  });
+  
+  detailsModal.addEventListener("click", (e) => {
+    if (e.target === detailsModal) {
+      closeDetailsModal();
     }
   });
 }
@@ -521,14 +538,86 @@ function removeFilter(type, value) {
 function showDetails(programTitle) {
   const program = programs.find((p) => p.title === programTitle);
   if (program) {
-    alert(
-      `Details for: ${program.title}\n\nContact: ${
-        program.contact || "Not available"
-      }\n\nPartners: ${program.partners}\n\nInvolvement: ${program.involvement}`
-    );
+    openDetailsModal(program);
   }
 }
 
 function showContact(contact) {
   alert(`Contact: ${contact}`);
 }
+
+// Details Modal Functions
+function openDetailsModal(program) {
+  detailsTitle.textContent = program.title;
+  
+  detailsBody.innerHTML = `
+    <div class="details-section">
+      <h3>Overview</h3>
+      <p>${program.overview}</p>
+    </div>
+    
+    <div class="details-section">
+      <h3>Program Information</h3>
+      <div class="details-grid">
+        <div class="details-item">
+          <strong>Department</strong>
+          <span>${program.department}</span>
+        </div>
+        <div class="details-item">
+          <strong>Category</strong>
+          <span>${program.category}</span>
+        </div>
+        <div class="details-item">
+          <strong>Level</strong>
+          <span>${program.level}</span>
+        </div>
+        <div class="details-item">
+          <strong>Credits</strong>
+          <span>${program.ects}</span>
+        </div>
+        <div class="details-item">
+          <strong>Timing</strong>
+          <span>${program.timing}</span>
+        </div>
+        <div class="details-item">
+          <strong>Class Size</strong>
+          <span>${program.classSize}</span>
+        </div>
+        <div class="details-item">
+          <strong>Investment</strong>
+          <span>${program.investment}</span>
+        </div>
+        <div class="details-item">
+          <strong>Duration</strong>
+          <span>${program.duration}</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="details-section">
+      <h3>Industry Involvement</h3>
+      <p>${program.involvement}</p>
+    </div>
+    
+    <div class="details-section">
+      <h3>Previous Partners</h3>
+      <p>${program.partners}</p>
+    </div>
+    
+    ${program.contact ? `
+    <div class="details-section">
+      <h3>Contact</h3>
+      <p>${program.contact}</p>
+    </div>
+    ` : ''}
+  `;
+  
+  detailsModal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeDetailsModal() {
+  detailsModal.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
