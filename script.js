@@ -4,12 +4,12 @@ const programs = [
     title: "Assistive Technology Challenge (ATC)",
     overview:
       "An applied challenge for assistive technology solutions connecting students with industry partners to co-design accessible tech.",
-    category: ["Innovation and Engineering", "Healthcare"],
+    category: ["Innovation & Engineering", "Healthcare"],
     investment: 0,
     eligiblePartners: ["Companies", "NGO", "Start Ups"],
     engagementType: ["Challenge", "Project Collaborator"],
-    duration: 3,
-    classSize: 30,
+    duration: 6,
+    classSize: 25,
     contact: "Camille Pescatore, Prof. Dr. Roger Gassert",
     department:
       "Rehabilitation Engineering Laboratory, Department of Health Sciences and Technology (D-HEST)",
@@ -36,7 +36,7 @@ const programs = [
     investment: 0,
     eligiblePartners: ["Companies"],
     engagementType: ["Educational Contributor"],
-    duration: 4,
+    duration: 6,
     classSize: 50,
     contact: "Simone Zuber (Coordinator of Studies D-BSSE)",
     department: "Health Sciences and Technology (D-HEST)",
@@ -53,11 +53,11 @@ const programs = [
     title: "Strategic Foresight for Sustainable Futures",
     overview:
       "Methods for anticipating change and shaping sustainable futures through scenario methods and foresight tools.",
-    category: ["Energy and Sustainability"],
+    category: ["Energy & Sustainability", "Business & Management"],
     investment: 0,
     eligiblePartners: ["Companies", "Governmental Organizations"],
     engagementType: ["Advisory Partner", "Educational Contributor"],
-    duration: 4,
+    duration: 6,
     classSize: 20,
     contact: "Dr. Johannes Heck",
     department: "Management, Technology, and Economics (D-MTEC)",
@@ -79,11 +79,11 @@ const programs = [
     title: "Case Studies: Energy Systems & Technology",
     overview:
       "Master course where students tackle real-world energy sector cases across two semesters; companies provide cases and mentorship.",
-    category: ["Energy and Sustainability"],
+    category: ["Energy & Sustainability", "Business & Management"],
     investment: 3000,
     eligiblePartners: ["Companies"],
     engagementType: ["Project Collaborator", "Advisory Partner"],
-    duration: 8,
+    duration: 12,
     classSize: 40,
     contact: "Dr. Katharina Bosina, Prof. Christian Schaffner",
     department: "Energy Science Center (ESC)",
@@ -100,7 +100,11 @@ const programs = [
     title: "Energy Now!",
     overview:
       "An innovation accelerator (3 months) connecting students and industry to co-create prototypes for the energy transition.",
-    category: ["Energy and Sustainability"],
+    category: [
+      "Energy & Sustainability",
+      "Innovation & Engineering",
+      "Business & Management",
+    ],
     investment: 0,
     eligiblePartners: ["Companies", "NGO"],
     engagementType: ["Challenge", "Project Collaborator"],
@@ -122,11 +126,15 @@ const programs = [
     title: "Transdisciplinary Case Study (TDCS)",
     overview:
       "Semester-long course co-created with regional stakeholders addressing sustainability challenges through fieldwork and participatory research.",
-    category: ["Energy and Sustainability"],
+    category: [
+      "Energy & Sustainability",
+      "Innovation & Engineering",
+      "Business & Management",
+    ],
     investment: 0,
     eligiblePartners: ["Governmental Organizations", "NGO", "Companies"],
     engagementType: ["Project Collaborator", "Community / Network Partner"],
-    duration: 4,
+    duration: 6,
     classSize: 25,
     contact: "Dr. Benjamin Hofmann",
     department:
@@ -152,11 +160,15 @@ const programs = [
     title: "Umweltproblemlösen",
     overview:
       "Year-long transdisciplinary project-based learning for first-year Environmental Science students working with local partners.",
-    category: ["Energy and Sustainability"],
+    category: [
+      "Energy & Sustainability",
+      "Innovation & Engineering",
+      "Business & Management",
+    ],
     investment: 0,
     eligiblePartners: ["Governmental Organizations", "NGO"],
     engagementType: ["Project Collaborator", "Community / Network Partner"],
-    duration: 10,
+    duration: 12,
     classSize: 100,
     contact: "Marlene Mader, Prof. Dr. Christian Pohl",
     department:
@@ -180,12 +192,16 @@ const programs = [
     title: "World Food System Summer School",
     overview:
       "Two-week intensive exploring sustainable and equitable food systems with field visits and prototyping.",
-    category: ["Energy and Sustainability"],
+    category: [
+      "Energy & Sustainability",
+      "Innovation & Engineering",
+      "Business & Management",
+    ],
     investment: 0,
     eligiblePartners: ["NGO", "Companies"],
     engagementType: ["Project Collaborator", "Educational Contributor"],
     duration: 0.5,
-    classSize: 30,
+    classSize: 40,
     contact: "Monika Siegrist",
     department:
       "World Food System Center (WFSC), Department of Environmental Systems Science (D-USYS)",
@@ -207,11 +223,11 @@ const programs = [
     title: "Data Science Lab",
     overview:
       "One-semester lab connecting students with partners to tackle data-driven projects and prototypes.",
-    category: ["Data Science and AI"],
+    category: ["Data Science & AI", "Innovation & Engineering"],
     investment: 0,
     eligiblePartners: ["Companies", "Start Ups"],
     engagementType: ["Project Collaborator", "Challenge"],
-    duration: 4,
+    duration: 6,
     classSize: 60,
     contact: "Prof. Alexander Illic, Arnout Devos",
     department: "ETH AI Center & Department of Computer Science (D-INFK)",
@@ -233,7 +249,7 @@ const programs = [
     title: "UN Student Team",
     overview:
       "Extra-curricular student teams working with UN agencies to co-develop practical technology solutions for global challenges.",
-    category: ["Innovation and Engineering"],
+    category: ["Data Science & AI", "Energy & Sustainability"],
     investment: 0,
     eligiblePartners: ["Governmental Organizations", "NGO"],
     engagementType: ["Project Collaborator", "Community / Network Partner"],
@@ -255,11 +271,11 @@ const programs = [
     title: "Entrepreneurial Leadership Seminar (ELS)",
     overview:
       "Intensive seminar connecting students with senior management to address strategic transformation and innovation challenges.",
-    category: ["Business & Management"],
+    category: ["Innovation & Engineering"],
     investment: 0,
     eligiblePartners: ["Companies"],
     engagementType: ["Educational Contributor", "Advisory Partner"],
-    duration: 4,
+    duration: 6,
     classSize: 18,
     contact: "Dr. Isabel Spicker",
     department: "Department of Management, Technology, and Economics (D-MTEC)",
@@ -289,7 +305,7 @@ const programs = [
     eligiblePartners: ["Companies"],
     engagementType: ["Project Collaborator", "Sponsor"],
     duration: 4,
-    classSize: 100,
+    classSize: null,
     contact: "Prof. Bart Clarysse, Carrie Joda Lyn",
     department: "Department of Management, Technology, and Economics (D-MTEC)",
     level: "Master",
@@ -306,7 +322,7 @@ const programs = [
     title: "Exploration Lab",
     overview:
       "A flagship program for prototyping and feasibility exploration (4-6 months) with partner-funded collaboration.",
-    category: ["Innovation and Engineering"],
+    category: ["Data Science & AI", "Innovation & Engineering"],
     investment: 50000,
     eligiblePartners: ["Companies"],
     engagementType: [
@@ -314,8 +330,8 @@ const programs = [
       "Sponsor",
       "Infrastructure / Facilities Partner",
     ],
-    duration: 5,
-    classSize: 16,
+    duration: 6,
+    classSize: 20,
     contact: "Kai von Petersdorff, Josseline Ross",
     department:
       "Originating from the Department of Mechanical and Process Engineering and supported by the Vice Presidency for Knowledge Transfer and Corporate Relations (VPWW)",
@@ -340,11 +356,15 @@ const programs = [
     title: "Space Systems",
     overview:
       "Program enabling students to design and analyse complete space missions with industry datasets and mission concepts.",
-    category: ["Innovation and Engineering"],
+    category: [
+      "Data Science & AI",
+      "Innovation & Engineering",
+      "Business & Management",
+    ],
     investment: 0,
     eligiblePartners: ["Companies", "Start Ups"],
     engagementType: ["Project Collaborator", "Advisory Partner"],
-    duration: 8,
+    duration: 12,
     classSize: 45,
     contact: "Dr. Simon Stähler",
     department: "Department of Earth and Planetary Sciences",
@@ -367,12 +387,17 @@ const programs = [
     title: "PBL Flagship Projects",
     overview:
       "Large-scale project-based learning across engineering clusters connecting companies with student teams for prototyping and applied R&D.",
-    category: ["Innovation and Engineering"],
+    category: [
+      "Data Science & AI",
+      "Energy & Sustainability",
+      "Innovation & Engineering",
+      "Healthcare",
+    ],
     investment: 0,
     eligiblePartners: ["Companies", "Governmental Organizations"],
     engagementType: ["Project Collaborator", "Sponsor"],
-    duration: 12,
-    classSize: 400,
+    duration: null,
+    classSize: null,
     contact: "Dr. Michaele Magno",
     department:
       "Center for Project-Based Learning (PBL), Department of Information Technology and Electrical Engineering (D-ITET)",
@@ -683,7 +708,7 @@ function renderPrograms(programsToRender) {
                         )}</span>
                     </div>
                     <div class="detail-item">
-                        <span class="detail-label">Class Size</span>
+                        <span class="detail-label">Talent Reach</span>
                         <span class="detail-value">${
                           program.classSize
                             ? program.classSize + " students"
@@ -932,7 +957,7 @@ function openDetailsModal(program) {
           <span>${program.timing}</span>
         </div>
         <div class="details-item">
-          <strong>Class Size</strong>
+          <strong>Talent Reach</strong>
           <span>${program.classSize}</span>
         </div>
         <div class="details-item">
